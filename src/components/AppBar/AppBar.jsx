@@ -9,7 +9,7 @@ import Workspaces from './Menu/Workspaces'
 import Starred from './Menu/Starred'
 import Templates from './Menu/Templates'
 import Recent from './Menu/Recent'
-// import More from './Menu/More'
+import More from './Menu/More'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
@@ -65,6 +65,9 @@ function AppBar() {
               } }}>Create</Button>
         </Box>
 
+        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <More />
+        </Box>
 
       </Box>
 

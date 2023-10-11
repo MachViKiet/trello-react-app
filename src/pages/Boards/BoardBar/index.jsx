@@ -15,10 +15,13 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd'
 const MENU_STYLE = {
   color: '#fff',
   border: 'none',
-  paddingX: '5px'
+  paddingX: '5px',
+  textTransform: 'capitalize'
 }
 
-function BoardBar() {
+function BoardBar(progs) {
+  const { board } = progs
+
   return (
     <Box
       px={ 2 }
@@ -37,17 +40,21 @@ function BoardBar() {
     >
       <Box py = {1} sx = {{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip
-          icon = {<PublicIcon color='red' />} label = "Public"
+          icon = {<PublicIcon color='red' /> }
+          clickable
+          sx= {MENU_STYLE}
+          label = { board?.title }
+        />
+
+        <Chip
+          icon = {<DashboardIcon color='#fff' />}
+          label = {board?.type}
           clickable
           sx= {MENU_STYLE} />
 
         <Chip
-          icon = {<DashboardIcon color='#fff' />} label = "Public"
-          clickable
-          sx= {MENU_STYLE} />
-
-        <Chip
-          icon = {<DownloadIcon color='#fff' />} label = "Download"
+          icon = {<DownloadIcon color='#fff' />}
+          label = "Download"
           clickable
           sx= {MENU_STYLE} />
 

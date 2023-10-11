@@ -1,1 +1,26 @@
 // Sort collums
+
+// const mapOrder = (originalArray, orderArray, key) => {
+//   if (!originalArray || !orderArray || !key) return []
+
+//   return [...originalArray].sort((a,b) => orderArray.indexOf(a[key]) - orderArray.indexOf(b[key]))
+//   const clonedArray = [...originalArray].sort((a,b)=>{
+
+//   })
+//   const orderedArray = clonedArray.sort((a, b) => {
+//     return 
+//   })
+
+//   return orderedArray
+// }
+
+export const mapOrder = (originalArray, orderArray, key) => {
+    if (!originalArray || !orderArray || !key) return []
+  
+    const clonedArray = [...originalArray]
+    const orderedArray = clonedArray.sort((a, b) => {
+      return orderArray.indexOf(a[key]) - orderArray.indexOf(b[key])
+    })
+  
+    return orderedArray
+}
