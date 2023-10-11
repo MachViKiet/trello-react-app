@@ -11,5 +11,5 @@ export default defineConfig({
       { find: '~', replacement: '/src' }
     ]
   },
-  base: '/vite-deploy/'
+  base: '/trello-react-app/'
 })
